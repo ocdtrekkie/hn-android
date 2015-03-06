@@ -1,7 +1,7 @@
 package com.manuelmaly.hn;
 
 import android.graphics.Typeface;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v4.app.FragmentActivity;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.view.MenuItem;
@@ -14,7 +14,7 @@ import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
 @EActivity(R.layout.about)
-public class AboutActivity extends ActionBarActivity {
+public class AboutActivity extends FragmentActivity {
     
     @ViewById(R.id.about_hn)
     TextView mHNView;

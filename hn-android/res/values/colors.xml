@@ -6,8 +6,8 @@
     <color name="red_dark_washedout">#9e402c</color>
     <color name="gray_comments_information">#9c9186</color>
     <color name="gray_comments_divider">#b8ab9e</color>
-    <color name="dark_gray_post_title">#262321</color>
-    <color name="gray_post_title_read">#9a8e86</color>
+    <color name="dark_gray_post_title">#ffffff</color>
+    <color name="gray_post_title_read">#989898</color>
     <color name="gray_article_title">#797979</color>
     <color name="gray_action_clicked">#979797</color>
 </resources>

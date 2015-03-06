@@ -1,13 +1,13 @@
 package com.manuelmaly.hn;
 
-import android.support.v7.app.ActionBarActivity;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.manuelmaly.hn.util.FontHelper;
 
-public class BaseListActivity extends ActionBarActivity {
+public class BaseListActivity extends FragmentActivity {
 
     private TextView mLoadingView;
 

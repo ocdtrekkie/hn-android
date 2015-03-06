@@ -122,7 +122,7 @@ public class CommentsActivity extends BaseListActivity implements
         mCommentsList.addHeaderView(mCommentHeader, null, false);
         mCommentsList.setAdapter(mCommentsListAdapter);
 
-        mActionbarTitle = (TextView) getSupportActionBar().getCustomView()
+        mActionbarTitle = (TextView) getActionBar().getCustomView()
                 .findViewById(R.id.actionbar_title);
         mActionbarTitle.setTypeface(FontHelper.getComfortaa(this, true));
         mActionbarTitle.setText(getString(R.string.comments));
@@ -350,7 +350,7 @@ public class CommentsActivity extends BaseListActivity implements
         mActionbarTitle.getLocationInWindow(posArray);
         Intent intent = SpotlightActivity.intentForSpotlightActivity(
                 CommentsActivity.this, posArray[0], mActionbarTitle.getWidth(),
-                0, getSupportActionBar().getHeight(),
+                0, getActionBar().getHeight(),
                 getString(R.string.click_on_comments));
         startActivityForResult(intent, ACTIVITY_SPOTLIGHT);
         overridePendingTransition(android.R.anim.fade_in,

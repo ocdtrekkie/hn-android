@@ -110,7 +110,7 @@ public class MainActivity extends BaseListActivity implements
             // presumably, not relevant
         }
 
-        TextView tv = (TextView) getSupportActionBar().getCustomView()
+        TextView tv = (TextView) getActionBar().getCustomView()
                 .findViewById(R.id.actionbar_title);
         tv.setTypeface(FontHelper.getComfortaa(this, true));
     }
