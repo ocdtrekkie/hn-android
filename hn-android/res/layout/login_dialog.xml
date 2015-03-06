@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        style="@android:style/ButtonBar">
+        style="@android:style/Holo.ButtonBar">
 
         <Button
             android:id="@+id/user_settings_dialog_save_button"

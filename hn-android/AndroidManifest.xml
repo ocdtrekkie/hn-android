@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.manuelmaly.hn"
-    android:versionCode="20"
-    android:versionName="1.9.10" >
+    android:versionCode="21"
+    android:versionName="1.9.10 +1" >
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -51,7 +51,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SettingsActivity"
-            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:theme="@android:style/Theme.Holo"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
         <activity android:name=".AboutActivity_"
@@ -72,7 +72,7 @@
                 </data>
             </intent-filter>
         </activity>
-        <activity android:name=".login.LoginActivity_" android:label="@string/credentials" android:theme="@android:style/Theme.Dialog" />
+        <activity android:name=".login.LoginActivity_" android:label="@string/credentials" android:theme="@android:style/Theme.Holo.Dialog" />
     </application>
 
 </manifest>

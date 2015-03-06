@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.view.MenuItemCompat;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -31,7 +31,7 @@ import org.androidannotations.annotations.ViewById;
 import java.net.URLEncoder;
 
 @EActivity(R.layout.article_activity)
-public class ArticleReaderActivity extends ActionBarActivity {
+public class ArticleReaderActivity extends FragmentActivity {
 
   public static final int ACTIVITY_LOGIN = 137;
 
@@ -60,7 +60,7 @@ public class ArticleReaderActivity extends ActionBarActivity {
   @AfterViews
   @SuppressLint("SetJavaScriptEnabled")
   public void init() {
-    mActionbarTitle = (TextView) getSupportActionBar().getCustomView().findViewById( R.id.actionbar_title );
+    mActionbarTitle = (TextView) getActionBar().getCustomView().findViewById( R.id.actionbar_title );
 
     mPost = (HNPost) getIntent().getSerializableExtra( EXTRA_HNPOST );
     if (mPost != null && mPost.getURL() != null) {
@@ -121,7 +121,7 @@ public class ArticleReaderActivity extends ActionBarActivity {
           int[] posArray = new int[2];
           mActionbarTitle.getLocationInWindow( posArray );
           Intent intent = SpotlightActivity.intentForSpotlightActivity( ArticleReaderActivity.this, posArray[0],
-              mActionbarTitle.getWidth(), 0, getSupportActionBar().getHeight(), getString( R.string.click_on_article ) );
+              mActionbarTitle.getWidth(), 0, getActionBar().getHeight(), getString( R.string.click_on_article ) );
           startActivityForResult( intent, ACTIVITY_LOGIN );
           overridePendingTransition( android.R.anim.fade_in, android.R.anim.fade_out );
         }

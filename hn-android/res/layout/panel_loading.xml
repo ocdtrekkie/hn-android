@@ -3,8 +3,6 @@
     android:id="@android:id/empty"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/peach"
     android:text="@string/loading"
     android:gravity="center"
-    android:textSize="26sp"
-    android:textColor="#c3b5a7" />
+    android:textSize="26sp" />
