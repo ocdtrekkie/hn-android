@@ -34,6 +34,7 @@ import android.widget.Toast;
 
 import com.manuelmaly.hn.login.LoginActivity_;
 import com.manuelmaly.hn.model.HNComment;
+import com.manuelmaly.hn.model.HNCommentTreeNode;
 import com.manuelmaly.hn.model.HNPost;
 import com.manuelmaly.hn.model.HNPostComments;
 import com.manuelmaly.hn.reuse.LinkifiedTextView;
@@ -440,6 +441,10 @@ public class CommentsActivity extends BaseListActivity implements
             } else {
                 mItems.add(getString(R.string.expand_comment));
             }
+
+            if (comment.getTreeNode().getParent() != null){
+                mItems.add(getString(R.string.collapse_thread));
+            }
         }
 
         @Override
@@ -529,19 +534,23 @@ public class CommentsActivity extends BaseListActivity implements
                     vote(mComment.getUpvoteUrl(Settings
                             .getUserName(CommentsActivity.this)), mComment);
                 }
-            } else
-                if (clickedText.equals(getApplicationContext().getString(
-                        R.string.downvote))) {
-                    // We don't need to test if the user is logged in here
-                    // because
-                    // They won't have a dowvnote url to see if they aren't
-                    // logged in
-                    vote(mComment.getDownvoteUrl(Settings
-                            .getUserName(CommentsActivity.this)), mComment);
-                } else {
-                    mComments.toggleCommentExpanded(mComment);
-                    mCommentsListAdapter.notifyDataSetChanged();
-                }
+            } else if (clickedText.equals(getApplicationContext().getString(
+                    R.string.downvote))) {
+                // We don't need to test if the user is logged in here
+                // because
+                // They won't have a dowvnote url to see if they aren't
+                // logged in
+                vote(mComment.getDownvoteUrl(Settings
+                        .getUserName(CommentsActivity.this)), mComment);
+            } else if(clickedText.equals(getApplicationContext().getString(
+                    R.string.collapse_thread))) {
+                HNCommentTreeNode mRootNode = mComment.getTreeNode().getRootNode();
+                mComments.toggleCommentExpanded(mRootNode.getComment());
+                mCommentsListAdapter.notifyDataSetChanged();
+            }else {
+                mComments.toggleCommentExpanded(mComment);
+                mCommentsListAdapter.notifyDataSetChanged();
+            }
         }
     }
 
